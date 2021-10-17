@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('title')
-    Dashboard messages
+messages - {{$message->subject ?? "..."}}
 @endsection
 
 
@@ -13,12 +13,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard Page</h1>
+            <h1 class="m-0 text-dark">Show Message</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{url('/dashboard/')}}">Home</a></li>
-                <li class="breadcrumb-item active"> Home Page</li>
+                <li class="breadcrumb-item active"> {{$message->subject ?? "..."}}</li>
             </ol>
         </div><!-- /.col -->
         </div><!-- /.row -->
@@ -86,7 +86,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">send</button>
+                            <button type="submit" class="btn btn-primary">send message</button>
                         </div>
                     </form>
                 </div>
